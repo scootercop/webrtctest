@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Realtime communication with WebRTC</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <h2 id="audio"></h2>
+    <div>
+        <div>
+            <span>Enter UserName : </span>
+            <input type="text" id="userName" autofocus />
+        </div>
+        <br />
+        <div>
+            <span>Enter Room Name : </span>
+            <input type="text" id="roomName" />
+        </div>
+        <br />
+        <div>
+            <button id="join" onclick=joinroom()>Join</button>
+            <button id="shareScreen" onclick=shareScreen()>Screen Share</button>
+        </div>
+    </div>
+    <br />
+    <audio id="remoteAudio" controls autoplay hidden></audio>
+    <ul id="usersInRoom"></ul>
+    <video id="remoteVideo" width="720" height="480" controls autoplay></video>
+
+    <!-- This file is automatically added/served when running "node index.js". -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
